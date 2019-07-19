@@ -28,12 +28,17 @@ const Card = props => {
     <>
       <CardContainer>
         <Header>{props.people.name}</Header>
-        <Text>
-          <p>Birth Date: {props.people.birth_year}</p>
-          <p>Hair Color: {props.people.hair_color}</p>
-          <p>Height: {props.people.height}</p>
-          <p>Eyes: {props.people.eye_color}</p>
-        </Text>
+        <div>
+          <Text>Birth Date: {props.people.birth_year}</Text>
+          <Text>Hair Color: {props.people.hair_color}</Text>
+        </div>
+        <div>
+          <Text>Height: {props.people.height}</Text>
+          <Text>Eyes: {props.people.eye_color}</Text>
+        </div>
+        <div>
+          <Text>Species: {props.people.species}</Text>
+        </div>
       </CardContainer>
     </>
   );

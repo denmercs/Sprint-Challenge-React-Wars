@@ -3,7 +3,7 @@ import Card from "../card/card.components";
 
 const CardList = props => (
   <>
-    <div className="card-list">
+    <div>
       {props.characters.map(character => (
         <Card people={character} />
       ))}

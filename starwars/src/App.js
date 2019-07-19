@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import CardList from "./components/card-list/card-list.components";
+import NewId from "./components/newId/new-id.components";
 
 // const App = () => {
 // Try to think through what state you'll need for this app before starting. Then build out
@@ -15,7 +16,8 @@ class App extends Component {
     super();
 
     this.state = {
-      characters: []
+      characters: [],
+      id: 0
     };
   }
 
@@ -24,6 +26,8 @@ class App extends Component {
       .then(res => res.json())
       .then(data => this.setState({ characters: data.results }))
       .catch(res => console.log("Error", res));
+
+    this.id = NewId();
   }
 
   render() {
@@ -33,7 +37,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <CardList characters={this.state.characters} />
+        <h1> StarWars Characters </h1>
+        <CardList key={this.state.id} characters={this.state.characters} />
       </div>
     );
   }
